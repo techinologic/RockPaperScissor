@@ -23,7 +23,7 @@ public class Main {
         System.out.println("Do you want to play with:\n[P]layer\n[C]omputer\n");
         gameMode = sc.nextLine();
 
-        if (gameMode.equals("P")) {
+        if (gameMode.equalsIgnoreCase("P")) {
 
             vsPlayer();
         } else {
@@ -35,7 +35,8 @@ public class Main {
     //method that will return rock paper and scissor strings
     public static String winningChoice(String choice) {
 
-        switch (choice) {
+
+        switch (choice.toUpperCase()) {
             case "R":
                 return "ROCK";
 
@@ -67,6 +68,7 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         System.out.println();
         System.out.println(player1 + " vs. "
                 + player2);
@@ -79,37 +81,37 @@ public class Main {
             System.out.print(player2 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissor\n>>");
             String p2choice = sc.nextLine();
 
-            if (p1choice.equals("R") && p2choice.equals("S")) {
+            if (p1choice.equalsIgnoreCase("R") && p2choice.equalsIgnoreCase("S")) {
                 System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
                 scores[0][0]++;
                 scores[1][1]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("P") && p2choice.equals("R")) {
+            } else if (p1choice.equalsIgnoreCase("P") && p2choice.equalsIgnoreCase("R")) {
                 System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
                 scores[0][0]++;
                 scores[1][1]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("S") && p2choice.equals("P")) {
+            } else if (p1choice.equalsIgnoreCase("S") && p2choice.equalsIgnoreCase("P")) {
                 System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
                 scores[0][0]++;
                 scores[1][1]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("S") && p2choice.equals("R")) {
+            } else if (p1choice.equalsIgnoreCase("S") && p2choice.equalsIgnoreCase("R")) {
                 System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
                 scores[0][1]++;
                 scores[1][0]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("R") && p2choice.equals("P")) {
+            } else if (p1choice.equalsIgnoreCase("R") && p2choice.equalsIgnoreCase("P")) {
                 System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
                 scores[0][1]++;
                 scores[1][0]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("P") && p2choice.equals("S")) {
+            } else if (p1choice.equalsIgnoreCase("P") && p2choice.equalsIgnoreCase("S")) {
                 System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
                 scores[0][1]++;
                 scores[1][0]++;
@@ -185,37 +187,37 @@ public class Main {
             }
 
 
-            if (p1choice.equals("R") && p2choice.equals("S")) {
+            if (p1choice.equalsIgnoreCase("R") && p2choice.equalsIgnoreCase("S")) {
                 System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
                 scores[0][0]++;
                 scores[1][1]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("P") && p2choice.equals("R")) {
+            } else if (p1choice.equalsIgnoreCase("P") && p2choice.equalsIgnoreCase("R")) {
                 System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
                 scores[0][0]++;
                 scores[1][1]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("S") && p2choice.equals("P")) {
+            } else if (p1choice.equalsIgnoreCase("S") && p2choice.equalsIgnoreCase("P")) {
                 System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
                 scores[0][0]++;
                 scores[1][1]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("S") && p2choice.equals("R")) {
+            } else if (p1choice.equalsIgnoreCase("S") && p2choice.equalsIgnoreCase("R")) {
                 System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
                 scores[0][1]++;
                 scores[1][0]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("R") && p2choice.equals("P")) {
+            } else if (p1choice.equalsIgnoreCase("R") && p2choice.equalsIgnoreCase("P")) {
                 System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
                 scores[0][1]++;
                 scores[1][0]++;
                 System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                         + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-            } else if (p1choice.equals("P") && p2choice.equals("S")) {
+            } else if (p1choice.equalsIgnoreCase("P") && p2choice.equalsIgnoreCase("S")) {
                 System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
                 scores[0][1]++;
                 scores[1][0]++;
