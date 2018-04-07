@@ -3,24 +3,22 @@ package com.company;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+class Main {
 
     private static String player1 = "";
     private static String player2 = "";
-    private static int[][] scores = new int[2][2];
+    private static final int[][] scores = new int[2][2];
     private static int rounds = 0;
     private static int games = 0;
-    private static String gameMode = "";
-    private static Scanner sc = new Scanner(System.in);
-    private static Random rand = new Random();
-    private static String p1choice;
+    private static final Scanner sc = new Scanner(System.in);
+    private static final Random rand = new Random();
     private static String p2choice;
 
     public static void main(String[] args) {
 
         //Prompt user to choose between playing with player or computer
-        System.out.println("Do you want to play with:\n[P]layer\n[C]omputer\n");
-        gameMode = sc.nextLine();
+        System.out.print("Do you want to play with:\n[P]layer\n[C]omputer\n>>");
+        String gameMode = sc.nextLine();
 
         if (gameMode.equalsIgnoreCase("P")) {
 
@@ -68,10 +66,10 @@ public class Main {
 
         for (int i = 0; i < rounds; i++) {
             System.out.println("\nGame # " + (i + 1) + " of " + rounds);
-            System.out.print(player1 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissor\n>>");
+            System.out.print(player1 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissors\n>>");
             String p1choice = sc.nextLine();
 
-            System.out.print(player2 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissor\n>>");
+            System.out.print(player2 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissors\n>>");
             String p2choice = sc.nextLine();
 
             findWinnerRound(i, p1choice, p2choice);
@@ -83,37 +81,37 @@ public class Main {
 
     private static void findWinnerRound(int i, String p1choice, String p2choice) {
         if (p1choice.equalsIgnoreCase("R") && p2choice.equalsIgnoreCase("S")) {
-            System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
+            System.out.println(player1 + " Wins round " + (i + 1) + "! " + winningChoice(p1choice) + " beats " + winningChoice(p2choice));
             scores[0][0]++;
             scores[1][1]++;
             System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                     + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
         } else if (p1choice.equalsIgnoreCase("P") && p2choice.equalsIgnoreCase("R")) {
-            System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
+            System.out.println(player1 + " Wins round " + (i + 1) + "! " + winningChoice(p1choice) + " beats " + winningChoice(p2choice));
             scores[0][0]++;
             scores[1][1]++;
             System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                     + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
         } else if (p1choice.equalsIgnoreCase("S") && p2choice.equalsIgnoreCase("P")) {
-            System.out.println(player1 + " Wins with " + winningChoice(p1choice) + " in round " + (i + 1));
+            System.out.println(player1 + " Wins round " + (i + 1) + "! " + winningChoice(p1choice) + " beats " + winningChoice(p2choice));
             scores[0][0]++;
             scores[1][1]++;
             System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                     + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
         } else if (p1choice.equalsIgnoreCase("S") && p2choice.equalsIgnoreCase("R")) {
-            System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
+            System.out.println(player2 + " Wins round " + (i + 1) + "! " + winningChoice(p2choice) + " beats " + winningChoice(p1choice));
             scores[0][1]++;
             scores[1][0]++;
             System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                     + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
         } else if (p1choice.equalsIgnoreCase("R") && p2choice.equalsIgnoreCase("P")) {
-            System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
+            System.out.println(player2 + " Wins round " + (i + 1) + "! " + winningChoice(p2choice) + " beats " + winningChoice(p1choice));
             scores[0][1]++;
             scores[1][0]++;
             System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                     + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
         } else if (p1choice.equalsIgnoreCase("P") && p2choice.equalsIgnoreCase("S")) {
-            System.out.println(player2 + " Wins with " + winningChoice(p2choice) + " in round " + (i + 1));
+            System.out.println(player2 + " Wins round " + (i + 1) + "! " + winningChoice(p2choice) + " beats " + winningChoice(p1choice));
             scores[0][1]++;
             scores[1][0]++;
             System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
@@ -160,12 +158,11 @@ public class Main {
 
         for (int i = 0; i < rounds; i++) {
             System.out.println("\nGame # " + (i + 1) + " of " + rounds);
-            System.out.print(player1 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissor\n>>");
-            p1choice = sc.nextLine();
+            System.out.print(player1 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissors\n>>");
+            String p1choice = sc.nextLine();
             int n = rand.nextInt(3) + 1;
 
             try {
-
                 switch (n) {
                     case 1:
                         p2choice = "R";
