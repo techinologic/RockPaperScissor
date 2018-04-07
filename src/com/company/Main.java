@@ -65,7 +65,7 @@ class Main {
                 + player2);
 
         for (int i = 0; i < rounds; i++) {
-            System.out.println("\nGame # " + (i + 1) + " of " + rounds);
+            System.out.println("\nRound # " + (i + 1) + " of " + rounds);
             System.out.print(player1 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissors\n>>");
             String p1choice = sc.nextLine();
 
@@ -122,10 +122,12 @@ class Main {
             scores[1][0]++;
             System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                     + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
-        } else {
+        } else if (p1choice.equalsIgnoreCase(p2choice) || (p2choice.equalsIgnoreCase(p1choice))) {
             System.out.println("It's a DRAW!");
             System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
                     + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
+        } else {
+            System.out.println("Invalid choice(s).");
         }
     }
 
@@ -133,10 +135,17 @@ class Main {
         if (rounds == games) {
             if (scores[0][0] > scores[1][0]) {
                 System.out.println("\n" + player1 + " WINS THE GAME!");
+                System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
+                        + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
             } else if (scores[0][0] < scores[1][0]) {
                 System.out.println("\n" + player2 + " WINS THE GAME!");
+                System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
+                        + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
             } else {
                 System.out.println("\nIt's a DRAW!");
+                System.out.println("SCORE: " + player1 + " " + scores[0][0] + "W " + scores[0][1] + "L" + " vs. "
+                        + player2 + " " + scores[1][0] + "W " + scores[1][1] + "L");
+
             }
         }
     }
@@ -163,7 +172,7 @@ class Main {
                 + player2);
 
         for (int i = 0; i < rounds; i++) {
-            System.out.println("\nGame # " + (i + 1) + " of " + rounds);
+            System.out.println("\nRound # " + (i + 1) + " of " + rounds);
             System.out.print(player1 + "'s Turn: \nChoose:\n[R]ock\n[P]aper\n[S]cissors\n>>");
             String p1choice = sc.nextLine();
             int n = rand.nextInt(3) + 1;
