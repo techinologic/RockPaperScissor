@@ -4,10 +4,9 @@
 #### The program then announces the winner as well as the basis for determining the winner (e.g. Paper covers rock, rock breaks scissors, scissors cut paper, or nobody wins).  
 #### Your program should allow the players to use lowercase as well as uppercase.Your program should allow each player to enter his/her name.  The player’s name is displayed with the winning move.
 
-![alt text](https://github.com/techinologic/RockPaperScissor/blob/master/ss_1.PNG)
-
-![alt text](https://github.com/techinologic/RockPaperScissor/blob/master/ss_2.PNG)
-
+<p align="center">
+  <img width="660" src="https://github.com/techinologic/RockPaperScissor/blob/master/ss_1.PNG">
+</p>
 <p align="center">
   <img width="660" src="https://github.com/techinologic/RockPaperScissor/blob/master/ss_2.PNG">
 </p>
