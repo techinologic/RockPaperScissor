@@ -7,7 +7,7 @@
 #### Your program should allow the players to use lowercase as well as uppercase.
 #### Your program should allow each player to enter his/her name.  The player’s name is displayed with the winning move.
 
-![alt text](https://github.com/techinologic/RockPaperScissor/blob/master/ss_1.png)
-![alt text](https://github.com/techinologic/RockPaperScissor/blob/master/ss_2.png)
+![alt text](https://github.com/techinologic/RockPaperScissor/blob/master/ss_1.PNG)
+![alt text](https://github.com/techinologic/RockPaperScissor/blob/master/ss_2.PNG)
 
 
