@@ -5,9 +5,9 @@
 #### Your program should allow the players to use lowercase as well as uppercase.Your program should allow each player to enter his/her name.  The player’s name is displayed with the winning move.
 
 <p align="center">
-  <img width="660" src="https://github.com/techinologic/RockPaperScissor/blob/master/ss_1.PNG">
+  <img width="660" src="https://github.com/techinologic/RockPaperScissor/blob/master/ss1.png">
 </p>
 <p align="center">
-  <img width="660" src="https://github.com/techinologic/RockPaperScissor/blob/master/ss_2.PNG">
+  <img width="660" src="https://github.com/techinologic/RockPaperScissor/blob/master/ss2.png">
 </p>
 
